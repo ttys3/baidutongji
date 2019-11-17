@@ -1,10 +1,10 @@
 {
-	"name": "phpbb/googleanalytics",
+	"name": "phpbb/baidutongji",
 	"type": "phpbb-extension",
-	"description": "An extension that allows administrators to easily add their Google Analytics tracking code to their phpBB forum.",
+	"description": "An extension that allows administrators to easily add their Baidu Tongji tracking code to their phpBB forum.",
 	"homepage": "https://www.phpbb.com",
 	"version": "1.0.5-dev",
-	"keywords": ["phpbb", "extension", "google", "analytics"],
+	"keywords": ["phpbb", "extension", "baidu", "analytics", "tongji"],
 	"license": "GPL-2.0-only",
 	"authors": [
 		{
@@ -12,26 +12,6 @@
 			"email": "admin@m-a-styles.de",
 			"homepage": "http://www.m-a-styles.de",
 			"role": "Extensions Team Consultant"
-		},
-		{
-			"name": "Michael Cullum",
-			"homepage": "http://michaelcullum.com",
-			"email": "michael@phpbb.com",
-			"role": "Extensions Team Consultant"
-		},
-		{
-			"name": "Matt Friedman",
-			"homepage": "http://vsephpbb.github.io",
-			"role": "Extensions Development Team Lead"
-		},
-		{
-			"name": "Nathan Guse",
-			"email": "nathaniel.guse@gmail.com",
-			"role": "Former Extensions Development Team Lead"
-		},
-		{
-			"name": "Lukasz Kaczynski",
-			"role": "Extensions Development Team"
 		}
 	],
 	"require": {
@@ -42,13 +22,13 @@
 		"phing/phing": "2.4.*"
 	},
 	"extra": {
-		"display-name": "Google Analytics",
+		"display-name": "Baidu Tongji",
 		"soft-require": {
 			"phpbb/phpbb": ">=3.1.0"
 		},
 		"version-check": {
 			"host": "www.phpbb.com",
-			"directory": "/customise/db/extension/googleanalytics",
+			"directory": "/customise/db/extension/baidutongji",
 			"filename": "version_check"
 		}
 	}

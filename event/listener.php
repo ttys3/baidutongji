@@ -1,14 +1,14 @@
 <?php
 /**
 *
-* Google Analytics extension for the phpBB Forum Software package.
+* Baidu Tongji extension for the phpBB Forum Software package.
 *
-* @copyright (c) 2014 phpBB Limited <https://www.phpbb.com>
+* @copyright (c) 2019 荒野無燈 <https://ttys3.net>
 * @license GNU General Public License, version 2 (GPL-2.0)
 *
 */
 
-namespace phpbb\googleanalytics\event;
+namespace phpbb\baidutongji\event;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -51,25 +51,22 @@ class listener implements EventSubscriberInterface
 	public static function getSubscribedEvents()
 	{
 		return array(
-			'core.acp_board_config_edit_add'	=> 'add_googleanalytics_configs',
-			'core.page_header'					=> 'load_google_analytics',
-			'core.validate_config_variable'		=> 'validate_googleanalytics_id',
+			'core.acp_board_config_edit_add'	=> 'add_baidutongji_configs',
+			'core.page_header'					=> 'load_baidu_tongji',
+			'core.validate_config_variable'		=> 'validate_baidutongji_id',
 		);
 	}
 
 	/**
-	* Load Google Analytics js code
+	* Load Baidu Tongji js code
 	*
 	* @return void
 	* @access public
 	*/
-	public function load_google_analytics()
+	public function load_baidu_tongji()
 	{
 		$this->template->assign_vars(array(
-			'GOOGLEANALYTICS_ID'		=> $this->config['googleanalytics_id'],
-			'GOOGLEANALYTICS_TAG'		=> $this->config['googleanalytics_tag'],
-			'GOOGLEANALYTICS_USER_ID'	=> $this->user->data['user_id'],
-			'S_ANONYMIZE_IP'			=> $this->config['ga_anonymize_ip'],
+			'BAIDUTONGJI_ID'		=> $this->config['baidutongji_id'],
 		));
 	}
 
@@ -80,41 +77,23 @@ class listener implements EventSubscriberInterface
 	* @return void
 	* @access public
 	*/
-	public function add_googleanalytics_configs($event)
+	public function add_baidutongji_configs($event)
 	{
 		// Add a config to the settings mode, after warnings_expire_days
 		if ($event['mode'] === 'settings' && isset($event['display_vars']['vars']['warnings_expire_days']))
 		{
 			// Load language file
-			$this->user->add_lang_ext('phpbb/googleanalytics', 'googleanalytics_acp');
+			$this->user->add_lang_ext('phpbb/baidutongji', 'baidutongji_acp');
 
 			// Store display_vars event in a local variable
 			$display_vars = $event['display_vars'];
 
 			// Define the new config vars
 			$ga_config_vars = array(
-				'legend_googleanalytics' => 'ACP_GOOGLEANALYTICS',
-				'googleanalytics_id' => array(
-					'lang'		=> 'ACP_GOOGLEANALYTICS_ID',
-					'validate'	=> 'googleanalytics_id',
+				'baidutongji_id' => array(
+					'lang'		=> 'ACP_BAIDUTONGJI_ID',
+					'validate'	=> 'baidutongji_id',
 					'type'		=> 'text:40:20',
-					'explain'	=> true,
-				),
-				'ga_anonymize_ip' => array(
-					'lang'		=> 'ACP_GA_ANONYMIZE_IP',
-					'validate'	=> 'bool',
-					'type'		=> 'radio:yes_no',
-					'explain'	=> true,
-				),
-				'googleanalytics_tag' => array(
-					'lang'		=> 'ACP_GOOGLEANALYTICS_TAG',
-					'validate'	=> 'int',
-					'type'		=> 'select',
-					'function'	=> 'build_select',
-					'params'	=> array(array(
-						0	=> 'ACP_GA_ANALYTICS_TAG',
-						1	=> 'ACP_GA_GTAGS_TAG',
-					), '{CONFIG_VALUE}'),
 					'explain'	=> true,
 				),
 			);
@@ -129,26 +108,26 @@ class listener implements EventSubscriberInterface
 	}
 
 	/**
-	* Validate the Google Analytics ID
+	* Validate the Baidu Tongji ID
 	*
 	* @param \phpbb\event\data $event The event object
 	* @return void
 	* @access public
 	*/
-	public function validate_googleanalytics_id($event)
+	public function validate_baidutongji_id($event)
 	{
-		$input = isset($event['cfg_array']['googleanalytics_id']) ? $event['cfg_array']['googleanalytics_id'] : '';
+		$input = isset($event['cfg_array']['baidutongji_id']) ? $event['cfg_array']['baidutongji_id'] : '';
 
-		// Check if the validate test is for google_analytics
-		if ($input !== '' && $event['config_definition']['validate'] === 'googleanalytics_id')
+		// Check if the validate test is for baidu_tongji
+		if ($input !== '' && $event['config_definition']['validate'] === 'baidutongji_id')
 		{
 			// Store the error and input event data
 			$error = $event['error'];
 
-			// Add error message if the input is not a valid Google Analytics ID
-			if (!preg_match('/^UA-\d{4,9}-\d{1,4}$/', $input))
+			// Add error message if the input is not a valid Baidu Tongji ID
+			if (!preg_match('/^[a-z0-9]{32}$/', $input))
 			{
-				$error[] = $this->user->lang('ACP_GOOGLEANALYTICS_ID_INVALID', $input);
+				$error[] = $this->user->lang('ACP_BAIDUTONGJI_ID_INVALID', $input);
 			}
 
 			// Update error event data

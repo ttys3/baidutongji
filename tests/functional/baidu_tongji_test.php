@@ -1,19 +1,19 @@
 <?php
 /**
 *
-* Google Analytics extension for the phpBB Forum Software package.
+* Baidu Tongji extension for the phpBB Forum Software package.
 *
 * @copyright (c) 2014 phpBB Limited <https://www.phpbb.com>
 * @license GNU General Public License, version 2 (GPL-2.0)
 *
 */
 
-namespace phpbb\googleanalytics\tests\functional;
+namespace phpbb\baidutongji\tests\functional;
 
 /**
 * @group functional
 */
-class google_analytics_test extends \phpbb_functional_test_case
+class baidu_tongji_test extends \phpbb_functional_test_case
 {
 	/** @var string */
 	protected $sample_ga_code = 'UA-000000-00';
@@ -25,11 +25,11 @@ class google_analytics_test extends \phpbb_functional_test_case
 	*/
 	protected static function setup_extensions()
 	{
-		return array('phpbb/googleanalytics');
+		return array('phpbb/baidutongji');
 	}
 
 	/**
-	* Test Google Analytics ACP page and save settings
+	* Test Baidu Tongji ACP page and save settings
 	*/
 	public function test_set_acp_settings()
 	{
@@ -38,7 +38,7 @@ class google_analytics_test extends \phpbb_functional_test_case
 
 		// Add language files
 		$this->add_lang('acp/board');
-		$this->add_lang_ext('phpbb/googleanalytics', 'googleanalytics_acp');
+		$this->add_lang_ext('phpbb/baidutongji', 'baidutongji_acp');
 
 		$found = false;
 
@@ -56,19 +56,19 @@ class google_analytics_test extends \phpbb_functional_test_case
 
 			$found = true;
 
-			$this->assertContainsLang('ACP_GOOGLEANALYTICS_ID', $nodes[$key + 1]);
+			$this->assertContainsLang('ACP_BAIDUTONGJI_ID', $nodes[$key + 1]);
 		}
 
 		// If GA settings not found where expected, test if they exist on page at all
 		if (!$found)
 		{
-			$this->assertContainsLang('ACP_GOOGLEANALYTICS_ID', $crawler->text());
+			$this->assertContainsLang('ACP_BAIDUTONGJI_ID', $crawler->text());
 		}
 
 		// Set GA form values
 		$form = $crawler->selectButton($this->lang('SUBMIT'))->form();
 		$values = $form->getValues();
-		$values['config[googleanalytics_id]'] = $this->sample_ga_code;
+		$values['config[baidutongji_id]'] = $this->sample_ga_code;
 		$form->setValues($values);
 
 		// Submit form and test success
@@ -77,9 +77,9 @@ class google_analytics_test extends \phpbb_functional_test_case
 	}
 
 	/**
-	* Test Google Analytics code appears as expected
+	* Test Baidu Tongji code appears as expected
 	*/
-	public function test_google_analytics_code()
+	public function test_baidu_tongji_code()
 	{
 		$crawler = self::request('GET', 'index.php');
 		$this->assertContains($this->sample_ga_code, $crawler->filter('head > script')->eq(1)->text());

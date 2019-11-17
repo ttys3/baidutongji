@@ -1,6 +1,6 @@
 services:
-    phpbb.googleanalytics.listener:
-        class: phpbb\googleanalytics\event\listener
+    phpbb.baidutongji.listener:
+        class: phpbb\baidutongji\event\listener
         arguments:
             - '@config'
             - '@template'

@@ -14,7 +14,7 @@
 ## 1.0.2 - 2017-01-12
 
 - Supports phpBB 3.1 and 3.2
-- Added support for tracking users by their user ID (must be enabled in your Google Analytics account to take advantage of it)
+- Added support for tracking users by their user ID (must be enabled in your Baidu Tongji account to take advantage of it)
 - Lots of internal code updates and improvements
 - Added Brazilian Portuguese translation
 - Added Croatian translation (casual and formal)
@@ -27,7 +27,7 @@
 ## 1.0.1 - 2014-11-28
 
 - Fixed issues in the README.md
-- Added a new template event `phpbb_googleanalytics_alter_ga_requirements` which may be used by other extensions to add more tracking options (like the ability to track advertisements). See here for a example: https://support.google.com/analytics/answer/2444872?hl=en&utm_id=ad
+- Added a new template event `phpbb_baidutongji_alter_ga_requirements` which may be used by other extensions to add more tracking options (like the ability to track advertisements). See here for a example: https://support.google.com/analytics/answer/2444872?hl=en&utm_id=ad
 - Added Arabic language pack
 - Added Dutch language pack
 - Added French language pack

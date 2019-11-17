@@ -8,10 +8,10 @@
 	"license": "GPL-2.0-only",
 	"authors": [
 		{
-			"name": "Marc Alexander",
-			"email": "admin@m-a-styles.de",
-			"homepage": "http://www.m-a-styles.de",
-			"role": "Extensions Team Consultant"
+			"name": "荒野無燈",
+			"email": "__@ttys3.net",
+			"homepage": "https:/ttys3.net",
+			"role": "Extensions Dev"
 		}
 	],
 	"require": {

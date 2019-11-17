@@ -8,13 +8,13 @@
 *
 */
 
-namespace phpbb\baidutongji\tests\event;
+namespace ttys3\baidutongji\tests\event;
 
 require_once __DIR__ . '/../../../../../includes/functions_acp.php';
 
 class listener_test extends \phpbb_test_case
 {
-	/** @var \phpbb\baidutongji\event\listener */
+	/** @var \ttys3\baidutongji\event\listener */
 	protected $listener;
 
 	/** @var \phpbb\config\config */
@@ -54,7 +54,7 @@ class listener_test extends \phpbb_test_case
 	*/
 	protected function set_listener()
 	{
-		$this->listener = new \phpbb\baidutongji\event\listener(
+		$this->listener = new \ttys3\baidutongji\event\listener(
 			$this->config,
 			$this->template,
 			$this->user
@@ -79,7 +79,7 @@ class listener_test extends \phpbb_test_case
 			'core.acp_board_config_edit_add',
 			'core.page_header',
 			'core.validate_config_variable',
-		), array_keys(\phpbb\baidutongji\event\listener::getSubscribedEvents()));
+		), array_keys(\ttys3\baidutongji\event\listener::getSubscribedEvents()));
 	}
 
 	/**

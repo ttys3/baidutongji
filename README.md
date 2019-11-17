@@ -17,7 +17,7 @@ An extension for phpBB 3.1 that allows administrators to easily add their Baidu 
 
 1. Navigate in the ACP to `Customise -> Extension Management -> Extensions`.
 2. Look for `Baidu Tongji` under the Enabled Extensions list, and click its `Disable` link.
-3. To permanently uninstall, click `Delete Data` and then delete the `/ext/phpbb/baidutongji` directory.
+3. To permanently uninstall, click `Delete Data` and then delete the `/ext/ttys3/baidutongji` directory.
 
 ## Support
 

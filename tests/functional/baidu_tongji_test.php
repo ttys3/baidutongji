@@ -8,7 +8,7 @@
 *
 */
 
-namespace phpbb\baidutongji\tests\functional;
+namespace ttys3\baidutongji\tests\functional;
 
 /**
 * @group functional
@@ -25,7 +25,7 @@ class baidu_tongji_test extends \phpbb_functional_test_case
 	*/
 	protected static function setup_extensions()
 	{
-		return array('phpbb/baidutongji');
+		return array('ttys3/baidutongji');
 	}
 
 	/**
@@ -38,7 +38,7 @@ class baidu_tongji_test extends \phpbb_functional_test_case
 
 		// Add language files
 		$this->add_lang('acp/board');
-		$this->add_lang_ext('phpbb/baidutongji', 'baidutongji_acp');
+		$this->add_lang_ext('ttys3/baidutongji', 'baidutongji_acp');
 
 		$found = false;
 

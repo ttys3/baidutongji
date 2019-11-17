@@ -8,7 +8,7 @@
 *
 */
 
-namespace phpbb\baidutongji\event;
+namespace ttys3\baidutongji\event;
 
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 
@@ -83,7 +83,7 @@ class listener implements EventSubscriberInterface
 		if ($event['mode'] === 'settings' && isset($event['display_vars']['vars']['warnings_expire_days']))
 		{
 			// Load language file
-			$this->user->add_lang_ext('phpbb/baidutongji', 'baidutongji_acp');
+			$this->user->add_lang_ext('ttys3/baidutongji', 'baidutongji_acp');
 
 			// Store display_vars event in a local variable
 			$display_vars = $event['display_vars'];

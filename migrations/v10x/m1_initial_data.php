@@ -8,7 +8,7 @@
 *
 */
 
-namespace phpbb\baidutongji\migrations\v10x;
+namespace ttys3\baidutongji\migrations\v10x;
 
 /**
 * Migration stage 1: Initial data changes to the database

@@ -1,10 +1,10 @@
 {
-	"name": "phpbb/baidutongji",
+	"name": "ttys3/baidutongji",
 	"type": "phpbb-extension",
 	"description": "An extension that allows administrators to easily add their Baidu Tongji tracking code to their phpBB forum.",
 	"homepage": "https://www.phpbb.com",
-	"version": "1.0.5-dev",
-	"keywords": ["phpbb", "extension", "baidu", "analytics", "tongji"],
+	"version": "1.0.0-dev",
+	"keywords": ["ttys3", "extension", "baidu", "analytics", "tongji"],
 	"license": "GPL-2.0-only",
 	"authors": [
 		{

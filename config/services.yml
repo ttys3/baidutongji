@@ -1,6 +1,6 @@
 services:
-    phpbb.baidutongji.listener:
-        class: phpbb\baidutongji\event\listener
+    ttys3.baidutongji.listener:
+        class: ttys3\baidutongji\event\listener
         arguments:
             - '@config'
             - '@template'

@@ -80,7 +80,7 @@ class listener implements EventSubscriberInterface
 	public function add_baidutongji_configs($event)
 	{
 		// Add a config to the settings mode, after warnings_expire_days
-		if ($event['mode'] === 'settings' && isset($event['display_vars']['vars']['warnings_expire_days']))
+		if ($event['mode'] === 'settings' && isset($event['display_vars']['vars']['board_timezone']))
 		{
 			// Load language file
 			$this->user->add_lang_ext('ttys3/baidutongji', 'baidutongji_acp');
@@ -99,7 +99,7 @@ class listener implements EventSubscriberInterface
 			);
 
 			// Add the new config vars after warnings_expire_days in the display_vars config array
-			$insert_after = array('after' => 'warnings_expire_days');
+			$insert_after = array('after' => 'board_timezone');
 			$display_vars['vars'] = phpbb_insert_config_array($display_vars['vars'], $ga_config_vars, $insert_after);
 
 			// Update the display_vars event with the new array

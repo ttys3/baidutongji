@@ -40,12 +40,6 @@ if (empty($lang) || !is_array($lang))
 $lang = array_merge($lang, array(
 	'ACP_BAIDUTONGJI'				=> 'Baidu Tongji',
 	'ACP_BAIDUTONGJI_ID'			=> 'Baidu Tongji ID',
-	'ACP_BAIDUTONGJI_ID_EXPLAIN'	=> 'Enter your Baidu Tongji ID code, e.g.: <samp>UA-0000000-00</samp>.<br /><br />Baidu Tongji can track your registered users across multiple devices and sessions, for a more accurate user count in your reports. To enable this enhanced functionality User ID tracking must be configured in your Baidu Tongji account. <a href="https://support.google.com/analytics/answer/3123666">Click for more information <i class="icon fa-external-link fa-fw" aria-hidden="true"></i></a>.',
-	'ACP_BAIDUTONGJI_ID_INVALID'	=> '“%s” is not a valid Baidu Tongji ID code.<br />It should be in the form “UA-0000000-00”.',
-	'ACP_GA_ANONYMIZE_IP'				=> 'Turn on IP Anonymization',
-	'ACP_GA_ANONYMIZE_IP_EXPLAIN'		=> 'Enable this option if you want the data collected by Baidu Tongji to be compliant with the EU‘s General Data Protection Regulation (GDPR). Note that enabling this option may slightly reduce the accuracy of geographic reporting.',
-	'ACP_BAIDUTONGJI_TAG'			=> 'Baidu Tongji Script Tag',
-	'ACP_BAIDUTONGJI_TAG_EXPLAIN'	=> 'Choose your preferred Baidu Tongji code snippet. Global site tag (gtag.js) is the current snippet recommended by Google. Baidu Tongji tag (analytics.js) is the legacy code snippet. <a href="https://developers.google.com/analytics/devguides/collection/gtagjs/migration">Click for more information <i class="icon fa-external-link fa-fw" aria-hidden="true"></i></a>.',
-	'ACP_GA_ANALYTICS_TAG'				=> 'Baidu Tongji Tag (analytics.js)',
-	'ACP_GA_GTAGS_TAG'					=> 'Global Site Tag (gtag.js)',
+	'ACP_BAIDUTONGJI_ID_EXPLAIN'	=> 'Enter your Baidu Tongji ID code, e.g.: <samp>98a8cd7fe51fbd4b4043e92c5ed295ea</samp>. <a href="https://tongji.baidu.com/" target="_blank" rel="noreferrer">Click for more information <i class="icon fa-external-link fa-fw" aria-hidden="true"></i></a>.',
+	'ACP_BAIDUTONGJI_ID_INVALID'	=> '“%s” is not a valid Baidu Tongji ID code.<br />It should be in the form of 32 chars hex string',
 ));
